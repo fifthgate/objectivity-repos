@@ -107,4 +107,50 @@ class MapperTest extends ObjectivityReposTestCase {
 		$foundResults = $this->mapper->findMany([2,3]);
 		$this->assertEquals(2, $foundResults->count());
 	}
+
+	public function testQueryOne() {
+		$entities = [
+			[
+				"name" => "Test Name A",
+				"slug" => "test_slug_a"
+			],
+			[
+				"name" => "Test Name B",
+				"slug" => "test_slug_b"
+			],
+			[
+				"name" => "Test Name C",
+				"slug" => "test_slug_c"
+			],
+		];
+		foreach ($entities as $entityArray) {
+			$this->mapper->save($this->generateTestEntity($entityArray));
+		}
+		$result = $this->mapper->queryOne(["entity_name" => "Test Name A", "slug" => "test_slug_a"]);
+		$this->assertEquals(1, $result->getID());
+		$this->assertEquals("Test Name A", $result->getName());
+		$this->assertEquals("test_slug_a", $result->getSlug());
+	}
+
+	public function testQueryMany() {
+		$entities = [
+			[
+				"name" => "Test Name X",
+				"slug" => "test_slug_a"
+			],
+			[
+				"name" => "Test Name B",
+				"slug" => "test_slug_b"
+			],
+			[
+				"name" => "Test Name X",
+				"slug" => "test_slug_c"
+			],
+		];
+		foreach ($entities as $entityArray) {
+			$this->mapper->save($this->generateTestEntity($entityArray));
+		}
+		$results = $this->mapper->queryMany(["entity_name" => "Test Name X"]);
+		$this->assertEquals(2, $results->count());
+	}
 }

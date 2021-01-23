@@ -116,7 +116,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityMapperInterface
     {
         $query = $this->db->table($this->getTableName());
         foreach ($queryArray as $col => $value) {
-            $query = $result->where($col, '=', $value);
+            $query = $query->where($col, '=', $value);
         }
         if ($this->softDeletes()) {
             $query = $query->whereNull('deleted_at');
