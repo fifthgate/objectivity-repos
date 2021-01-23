@@ -5,15 +5,28 @@ namespace Fifthgate\Objectivity\Repositories\Tests;
 use Orchestra\Testbench\TestCase;
 use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityMapper;
 use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityRepository;
-
+use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntity;
 use Illuminate\Database\DatabaseManager as DB;
+use \DateTime;
 
 class ObjectivityReposTestCase extends TestCase {
-
 
 	protected $mapper;
 
 	protected $repository;
+
+	public function generateTestEntity(array $overrides = []) {
+		$entity	= new MockSluggableDomainEntity;
+		if (isset($overrides["id"]) && $overrides["id"]) {
+			$entity->setID($overrides["id"]);
+		}
+		$entity->setName($overrides["name"] ?? "Test Name");
+		$entity->setSlug($overrides["slug"] ?? "test_slug");
+		$createdAt = new DateTime("2009-09-09 09:09:09");
+		$entity->setCreatedAt($overrides["created_at"] ?? $createdAt);
+		$entity->setUpdatedAt($overrides["updated_at"] ?? $createdAt);
+		return $entity;
+	}
 
   	protected function getPackageProviders($app) {
 	}

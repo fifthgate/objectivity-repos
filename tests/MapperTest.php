@@ -9,23 +9,9 @@ use \DateTime;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-
 class MapperTest extends ObjectivityReposTestCase {
 
 	use RefreshDatabase;
-
-	public function generateTestEntity(array $overrides = []) {
-		$entity	= new MockSluggableDomainEntity;
-		if (isset($overrides["id"]) && $overrides["id"]) {
-			$entity->setID($overrides["id"]);
-		}
-		$entity->setName($overrides["name"] ?? "Test Name");
-		$entity->setSlug($overrides["slug"] ?? "test_slug");
-		$createdAt = new DateTime("2009-09-09 09:09:09");
-		$entity->setCreatedAt($overrides["created_at"] ?? $createdAt);
-		$entity->setUpdatedAt($overrides["updated_at"] ?? $createdAt);
-		return $entity;
-	}
 
 	public function testMapperInstantiation() {
 		$this->assertFalse($this->mapper->publishes());
