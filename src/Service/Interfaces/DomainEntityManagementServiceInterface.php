@@ -1,9 +1,9 @@
 <?php
 
-namespace Services\Core\Service\Interfaces;
+namespace Fifthgate\Objectivity\Repositories\Service\Interfaces;
 
-use Services\Core\Domain\Interfaces\DomainEntityInterface;
-use Services\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
+use Fifthgate\Objectivity\Domain\Interfaces\DomainEntityInterface;
+use Fifthgate\Objectivity\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 
 interface DomainEntityManagementServiceInterface
 {

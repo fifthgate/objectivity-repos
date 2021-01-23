@@ -1,9 +1,9 @@
 <?php
 
-namespace Services\Core\Infrastructure\Repository\Interfaces;
+namespace Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces;
 
-use Services\Core\Domain\Interfaces\DomainEntityInterface;
-use Services\Core\Infrastructure\Repository\Interfaces\DomainEntityRepositoryInterface;
+use Fifthgate\Objectivity\Domain\Interfaces\DomainEntityInterface;
+use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\DomainEntityRepositoryInterface;
 
 interface SluggableDomainEntityRepositoryInterface extends DomainEntityRepositoryInterface
 {

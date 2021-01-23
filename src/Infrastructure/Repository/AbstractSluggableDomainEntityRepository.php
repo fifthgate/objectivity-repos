@@ -1,10 +1,10 @@
 <?php
 
-namespace Services\Core\Infrastructure\Repository;
+namespace Fifthgate\Objectivity\Repositories\Infrastructure\Repository;
 
-use Services\Core\Infrastructure\Repository\AbstractDomainEntityRepository;
-use Services\Core\Infrastructure\Repository\Interfaces\SluggableDomainEntityRepositoryInterface;
-use Services\Core\Domain\Interfaces\DomainEntityInterface;
+use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\AbstractDomainEntityRepository;
+use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\SluggableDomainEntityRepositoryInterface;
+use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 
 /**
  * @codeCoverageIgnore

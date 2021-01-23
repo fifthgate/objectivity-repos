@@ -1,8 +1,8 @@
 <?php
 
-namespace Services\Core\Service;
+namespace Fifthgate\Objectivity\Repositories\Service;
 
-use Services\Core\Service\Interfaces\DomainEntityManagementServiceInterface;
+use Fifthgate\Objectivity\Repositories\Service\Interfaces\DomainEntityManagementServiceInterface;
 
 abstract class AbstractDomainEntityManagementService implements DomainEntityManagementServiceInterface
 {

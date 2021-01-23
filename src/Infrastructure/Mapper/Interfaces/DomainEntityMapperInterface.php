@@ -1,9 +1,9 @@
 <?php
 
-namespace Services\Core\Infrastructure\Mapper\Interfaces;
+namespace Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\Interfaces;
 
-use Services\Core\Domain\Interfaces\DomainEntityInterface;
-use Services\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
+use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
+use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 
 interface DomainEntityMapperInterface
 {

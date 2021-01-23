@@ -1,10 +1,13 @@
 <?php
-namespace Services\Core\Infrastructure\Mapper;
+namespace Fifthgate\Objectivity\Repositories\Infrastructure\Mapper;
 
-use Services\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
-use Services\Core\Infrastructure\Mapper\Interfaces\SluggableDomainEntityMapperInterface;
-use Services\Core\Infrastructure\Mapper\AbstractDomainEntityMapper;
-use Services\Core\Domain\Interfaces\DomainEntityInterface;
+use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
+use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
+use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
+
+use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\Interfaces\SluggableDomainEntityMapperInterface;
+use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\AbstractDomainEntityMapper;
+
 use Carbon\Carbon;
 
 /**

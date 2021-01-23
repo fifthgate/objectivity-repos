@@ -1,10 +1,10 @@
 <?php
 
-namespace Services\Core\Infrastructure\Repository;
+namespace Fifthgate\Objectivity\Repositories\Infrastructure\Repository;
 
-use Services\Core\Infrastructure\Repository\Interfaces\DomainEntityRepositoryInterface;
-use Services\Core\Domain\Interfaces\DomainEntityInterface;
-use Services\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
+use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\DomainEntityRepositoryInterface;
+use Fifthgate\Objectivity\Domain\Interfaces\DomainEntityInterface;
+use Fifthgate\Objectivity\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 
 abstract class AbstractDomainEntityRepository implements DomainEntityRepositoryInterface
 {
