@@ -1,6 +1,6 @@
 <?php
 
-namespace Fifthgate\Objectivity\Service;
+namespace Fifthgate\Objectivity\Repositories\Service;
 
 use Fifthgate\Objectivity\Repositories\Service\Interfaces\DomainEntityManagementServiceInterface;
 use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\DomainEntityRepositoryInterface;
