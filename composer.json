@@ -11,9 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-
-    },
-    "require": {
+        "fifthgate/objectivity-core": "9999999-dev",
         "guzzlehttp/guzzle": "^7.2"
     },
     "require-dev": {
@@ -31,5 +29,11 @@
             "Fifthgate\\Objectivity\\Repositories\\Tests\\": "tests",
             "Fifthgate\\Objectivity\\Repositories\\Tests\\Mocks\\": "tests/mocks"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:fifthgate/objectivity-core.git"
+        }
+    ]
 }
