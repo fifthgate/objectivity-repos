@@ -5,8 +5,8 @@ namespace Fifthgate\Objectivity\Repositories\Service;
 use Fifthgate\Objectivity\Repositories\Service\Interfaces\DomainEntityManagementServiceInterface;
 use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\DomainEntityRepositoryInterface;
 use Fifthgate\Objectivity\Repositories\Service\AbstractDomainEntityManagementService;
-use Fifthgate\Objectivity\Domain\Interfaces\DomainEntityInterface;
-use Fifthgate\Objectivity\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
+use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
+use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 
 abstract class AbstractRepositoryDrivenDomainEntityManagementService extends AbstractDomainEntityManagementService implements DomainEntityManagementServiceInterface
 {

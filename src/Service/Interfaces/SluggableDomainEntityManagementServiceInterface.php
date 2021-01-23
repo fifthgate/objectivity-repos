@@ -3,8 +3,8 @@
 namespace Fifthgate\Objectivity\Repositories\Service\Interfaces;
 
 use Fifthgate\Objectivity\Repositories\Service\Interfaces\DomainEntityManagementServiceInterface;
-use Fifthgate\Objectivity\Domain\Interfaces\DomainEntityInterface;
-use Fifthgate\Objectivity\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
+use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
+use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 
 interface SluggableDomainEntityManagementServiceInterface extends DomainEntityManagementServiceInterface
 {
