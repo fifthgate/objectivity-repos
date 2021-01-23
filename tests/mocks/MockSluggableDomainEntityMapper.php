@@ -5,6 +5,8 @@ namespace Fifthgate\Objectivity\Repositories\Tests\Mocks;
 use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\AbstractSluggableDomainEntityMapper;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
+use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntity;
+use \DateTime;
 
 class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMapper {
 	
@@ -21,7 +23,13 @@ class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMappe
 	}
     
     public function mapEntity(array $result) : DomainEntityInterface {
-
+        $entity = new MockSluggableDomainEntity;
+        $entity->setID($result["id"]);
+        $entity->setName($result["entity_name"]);
+        $entity->setSlug($result["slug"]);
+        $entity->setUpdatedAt(new DateTime($result["updated_at"]));
+        $entity->setCreatedAt(new DateTime($result["created_at"]));
+        return $entity;
     }
 
     protected function update(DomainEntityInterface $domainEntity) : DomainEntityInterface {
