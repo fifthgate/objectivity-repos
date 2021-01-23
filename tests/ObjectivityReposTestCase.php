@@ -6,6 +6,8 @@ use Orchestra\Testbench\TestCase;
 use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityMapper;
 use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityRepository;
 use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntity;
+use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockRepositoryDrivenSluggableDomainEntityManagementService;
+
 use Illuminate\Database\DatabaseManager as DB;
 use \DateTime;
 
@@ -14,6 +16,8 @@ class ObjectivityReposTestCase extends TestCase {
 	protected $mapper;
 
 	protected $repository;
+
+	protected $service;
 
 	public function generateTestEntity(array $overrides = []) {
 		$entity	= new MockSluggableDomainEntity;
@@ -53,6 +57,6 @@ class ObjectivityReposTestCase extends TestCase {
 	    $db = $this->app->get(DB::class);
 	    $this->mapper = new MockSluggableDomainEntityMapper($db);	
 	    $this->repository = new MockSluggableDomainEntityRepository($this->mapper);
-
+	    $this->service = new MockRepositoryDrivenSluggableDomainEntityManagementService($this->repository);
 	}
 }

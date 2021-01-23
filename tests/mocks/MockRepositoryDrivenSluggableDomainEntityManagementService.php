@@ -1,0 +1,9 @@
+<?php
+
+namespace Fifthgate\Objectivity\Repositories\Tests\Mocks;
+
+use Fifthgate\Objectivity\Repositories\Service\AbstractRepositoryDrivenSluggableDomainEntityManagementService;
+
+class MockRepositoryDrivenSluggableDomainEntityManagementService extends AbstractRepositoryDrivenSluggableDomainEntityManagementService {
+	
+}
