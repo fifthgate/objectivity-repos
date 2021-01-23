@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47b49692570956dfec289b354c13c416",
+    "content-hash": "32164960d708d125c8a5a0d31552c19d",
     "packages": [
         {
             "name": "fifthgate/objectivity-core",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:fifthgate/objectivity-core.git",
-                "reference": "e6ca7cdbd7a5265635d0a6416952a71c91f6ef8e"
+                "reference": "bc80342009e628c44cfe39b435ffd30e7e0f99a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fifthgate/objectivity-core/zipball/e6ca7cdbd7a5265635d0a6416952a71c91f6ef8e",
-                "reference": "e6ca7cdbd7a5265635d0a6416952a71c91f6ef8e",
+                "url": "https://api.github.com/repos/fifthgate/objectivity-core/zipball/bc80342009e628c44cfe39b435ffd30e7e0f99a0",
+                "reference": "bc80342009e628c44cfe39b435ffd30e7e0f99a0",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,7 @@
                 "source": "https://github.com/fifthgate/objectivity-core/tree/master",
                 "issues": "https://github.com/fifthgate/objectivity-core/issues"
             },
-            "time": "2021-01-23T10:46:19+00:00"
+            "time": "2021-01-23T13:30:57+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1031,73 +1031,6 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
-            "name": "laravel/browser-kit-testing",
-            "version": "6.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/browser-kit-testing.git",
-                "reference": "0e3b165a52aaa3e6c6e7298d24b2fc58e8ec849b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/browser-kit-testing/zipball/0e3b165a52aaa3e6c6e7298d24b2fc58e8ec849b",
-                "reference": "0e3b165a52aaa3e6c6e7298d24b2fc58e8ec849b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-dom": "*",
-                "ext-json": "*",
-                "illuminate/contracts": "^7.0|^8.0",
-                "illuminate/database": "^7.0|^8.0",
-                "illuminate/http": "^7.0|^8.0",
-                "illuminate/support": "^7.0|^8.0",
-                "illuminate/testing": "^7.0|^8.0",
-                "mockery/mockery": "^1.0",
-                "php": "^7.2|^8.0",
-                "phpunit/phpunit": "^8.5|^9.0",
-                "symfony/console": "^5.0",
-                "symfony/css-selector": "^5.0",
-                "symfony/dom-crawler": "^5.0",
-                "symfony/http-foundation": "^5.0",
-                "symfony/http-kernel": "^5.0"
-            },
-            "require-dev": {
-                "laravel/framework": "^7.0|^8.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "6.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\BrowserKitTesting\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Provides backwards compatibility for BrowserKit testing in the latest Laravel release.",
-            "keywords": [
-                "laravel",
-                "testing"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel/browser-kit-testing/issues",
-                "source": "https://github.com/laravel/browser-kit-testing/tree/6.x"
-            },
-            "time": "2020-12-14T16:11:58+00:00"
-        },
-        {
             "name": "laravel/framework",
             "version": "8.x-dev",
             "source": {
@@ -2026,65 +1959,6 @@
                 }
             ],
             "time": "2021-01-17T23:48:38+00:00"
-        },
-        {
-            "name": "orchestra/testbench-browser-kit",
-            "version": "6.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/orchestral/testbench-browser-kit.git",
-                "reference": "1af8f83627933d5f7401bf44b8addbd7f11231b7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-browser-kit/zipball/1af8f83627933d5f7401bf44b8addbd7f11231b7",
-                "reference": "1af8f83627933d5f7401bf44b8addbd7f11231b7",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/browser-kit-testing": "^6.2",
-                "orchestra/testbench": "^6.9",
-                "php": ">=7.3 || >=8.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "6.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Orchestra\\Testbench\\BrowserKit\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mior Muhammad Zaki",
-                    "email": "crynobone@gmail.com",
-                    "homepage": "https://github.com/crynobone"
-                }
-            ],
-            "description": "Laravel Browser Kit Testing Helper for Packages Development",
-            "support": {
-                "issues": "https://github.com/orchestral/testbench-browser-kit/issues",
-                "source": "https://github.com/orchestral/testbench-browser-kit/tree/v6.7.0"
-            },
-            "funding": [
-                {
-                    "url": "https://paypal.me/crynobone",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://liberapay.com/crynobone",
-                    "type": "liberapay"
-                }
-            ],
-            "time": "2021-01-18T00:04:14+00:00"
         },
         {
             "name": "orchestra/testbench-core",
@@ -4675,82 +4549,6 @@
             "time": "2021-01-01T09:26:45+00:00"
         },
         {
-            "name": "symfony/dom-crawler",
-            "version": "5.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "a94f3210c7d56c84f65484233733b76e14c45a09"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/a94f3210c7d56c84f65484233733b76e14c45a09",
-                "reference": "a94f3210c7d56c84f65484233733b76e14c45a09",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/deprecation-contracts": "^2.1",
-                "symfony/polyfill-ctype": "~1.8",
-                "symfony/polyfill-mbstring": "~1.0",
-                "symfony/polyfill-php80": "^1.15"
-            },
-            "conflict": {
-                "masterminds/html5": "<2.6"
-            },
-            "require-dev": {
-                "masterminds/html5": "^2.6",
-                "symfony/css-selector": "^4.4|^5.0"
-            },
-            "suggest": {
-                "symfony/css-selector": ""
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\DomCrawler\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Eases DOM navigation for HTML and XML documents",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/dom-crawler/tree/5.x"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-01-14T07:18:56+00:00"
-        },
-        {
             "name": "symfony/error-handler",
             "version": "5.x-dev",
             "source": {
@@ -7118,8 +6916,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "fifthgate/objectivity-core": 20,
-        "orchestra/testbench": 20,
-        "orchestra/testbench-browser-kit": 20
+        "orchestra/testbench": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -2,7 +2,6 @@
 
 namespace Fifthgate\Objectivity\Repositories\Tests\Mocks;
 
-
 use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\AbstractSluggableDomainEntityMapper;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
@@ -29,6 +28,14 @@ class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMappe
 
     }
     protected function create(DomainEntityInterface $domainEntity) : DomainEntityInterface {
-
+    	 $id = $this->db->table($this->getTableName())
+            ->insertGetId([
+                'slug' => $domainEntity->getSlug(),
+                'entity_name' => $domainEntity->getName(),
+                'created_at' => $domainEntity->getCreatedAt()->format('Y-m-d H:i:s'),
+                'updated_at' => $domainEntity->getUpdatedAt()->format('Y-m-d H:i:s')
+        ]);
+        $domainEntity->setID($id);
+        return $domainEntity;
     }
 }
