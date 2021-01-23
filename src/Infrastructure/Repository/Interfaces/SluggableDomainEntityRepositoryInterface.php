@@ -2,8 +2,8 @@
 
 namespace Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces;
 
-use Fifthgate\Objectivity\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\DomainEntityRepositoryInterface;
+use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 
 interface SluggableDomainEntityRepositoryInterface extends DomainEntityRepositoryInterface
 {

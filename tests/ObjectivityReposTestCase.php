@@ -4,12 +4,16 @@ namespace Fifthgate\Objectivity\Repositories\Tests;
 
 use Orchestra\Testbench\TestCase;
 use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityMapper;
+use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityRepository;
+
 use Illuminate\Database\DatabaseManager as DB;
 
 class ObjectivityReposTestCase extends TestCase {
 
 
 	protected $mapper;
+
+	protected $repository;
 
   	protected function getPackageProviders($app) {
 	}
@@ -35,5 +39,7 @@ class ObjectivityReposTestCase extends TestCase {
 	    $this->loadMigrationsFrom(__DIR__ . '/migrations');
 	    $db = $this->app->get(DB::class);
 	    $this->mapper = new MockSluggableDomainEntityMapper($db);	
+	    $this->repository = new MockSluggableDomainEntityRepository($this->mapper);
+
 	}
 }
