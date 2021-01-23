@@ -14,11 +14,12 @@ abstract class AbstractSluggableDomainEntityMapper extends AbstractDomainEntityM
     public function findBySlug(string $slug, bool $includeUnpublished = false) : ? DomainEntityInterface
     {
         $query = $this->db->table($this->getTableName())->where('slug', '=', $slug);
+        //@codeCoverageIgnoreStart
         if ($this->publishes() && !$includeUnpublished) {
             $now = new Carbon;
             $query = $query->whereDate('publication_date', '<=', $now->format($this->mysqlDateFormat));
         }
-        
+        //@codeCoverageIgnoreEnd
         if ($this->softDeletes()) {
             $query = $query->whereNull('deleted_at');
         }
