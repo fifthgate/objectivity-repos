@@ -7,6 +7,7 @@ use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntity;
 use \DateTime;
+use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityCollection;
 
 class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMapper {
 	
@@ -19,7 +20,7 @@ class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMappe
     protected bool $usesSlugs = true;
 
 	public function makeCollection() : DomainEntityCollectionInterface {
-
+        return new MockSluggableDomainEntityCollection;
 	}
     
     public function mapEntity(array $result) : DomainEntityInterface {

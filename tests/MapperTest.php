@@ -16,8 +16,11 @@ class MapperTest extends ObjectivityReposTestCase {
 
 	public function generateTestEntity(array $overrides = []) {
 		$entity	= new MockSluggableDomainEntity;
+		if (isset($overrides["id"]) && $overrides["id"]) {
+			$entity->setID($overrides["id"]);
+		}
 		$entity->setName($overrides["name"] ?? "Test Name");
-		$entity->setSlug($overides["slug"] ?? "test_slug");
+		$entity->setSlug($overrides["slug"] ?? "test_slug");
 		$createdAt = new DateTime("2009-09-09 09:09:09");
 		$entity->setCreatedAt($overrides["created_at"] ?? $createdAt);
 		$entity->setUpdatedAt($overrides["updated_at"] ?? $createdAt);
@@ -58,5 +61,50 @@ class MapperTest extends ObjectivityReposTestCase {
 		$this->assertNull($this->mapper->find($id));
 
 		$this->assertEquals($id, $this->mapper->findDeleted($id)->getID());
+	}
+
+	public function testFindAll() {
+		$entities = [
+			[
+				"name" => "Test Name A",
+				"slug" => "test_slug_a"
+			],
+			[
+				"name" => "Test Name B",
+				"slug" => "test_slug_b"
+			],
+			[
+				"name" => "Test Name C",
+				"slug" => "test_slug_c"
+			],
+		];
+		foreach ($entities as $entityArray) {
+			$this->mapper->save($this->generateTestEntity($entityArray));
+		}
+		$this->assertEquals(3, $this->mapper->findAll()->count());
+	}
+
+	public function testFindMany() {
+		$entities = [
+			[
+				"name" => "Test Name A",
+				"slug" => "test_slug_a"
+			],
+			[
+				"name" => "Test Name B",
+				"slug" => "test_slug_b"
+			],
+			[
+				"name" => "Test Name C",
+				"slug" => "test_slug_c"
+			],
+		];
+		foreach ($entities as $entityArray) {
+			$this->mapper->save($this->generateTestEntity($entityArray));
+		}
+		$results = $this->mapper->findAll();
+		$this->assertEquals(3, $results->count());	
+		$foundResults = $this->mapper->findMany([2,3]);
+		$this->assertEquals(2, $foundResults->count());
 	}
 }

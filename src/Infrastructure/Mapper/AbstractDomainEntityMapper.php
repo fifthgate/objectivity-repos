@@ -66,10 +66,12 @@ abstract class AbstractDomainEntityMapper implements DomainEntityMapperInterface
         if ($this->softDeletes()) {
             $query = $query->whereNull('deleted_at');
         }
+        //@codeCoverageIgnoreStart
         if (!$includeUnpublished && $this->publishes()) {
             $now = new Carbon;
             $query = $query->whereDate('publication_date', '<=', $now->format('Y-m-d H:i:s'));
         }
+        //@codeCoverageIgnoreEnd
         $results = $query->get()->toArray();
 
         return $results ? $this->mapMany($results) : null;
@@ -144,7 +146,9 @@ abstract class AbstractDomainEntityMapper implements DomainEntityMapperInterface
             $deletedAt = new Carbon;
             $query = $query->update(['deleted_at' => $deletedAt->format($this->mysqlDateFormat)]);
         } else {
+            //@codeCoverageIgnoreStart
             $query = $query->delete();
+            //@codeCoverageIgnoreEnd
         }
     }
 
@@ -158,7 +162,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityMapperInterface
         $query = $this->db->table($this->getTableName())
             ->where($this->getIDColumnName(), '=', $id);
         $result = $query->first();
-        
+
         return $result ? $this->mapEntity((array) $result) : null;
     }
 }
