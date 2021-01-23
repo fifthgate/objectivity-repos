@@ -11,7 +11,7 @@ use Carbon\Carbon;
 
 abstract class AbstractSluggableDomainEntityMapper extends AbstractDomainEntityMapper implements SluggableDomainEntityMapperInterface
 {
-    public function findBySlug(string $slug, bool $includeUnpublished) : ? DomainEntityInterface
+    public function findBySlug(string $slug, bool $includeUnpublished = false) : ? DomainEntityInterface
     {
         $query = $this->db->table($this->getTableName())->where('slug', '=', $slug);
         if ($this->publishes() && !$includeUnpublished) {

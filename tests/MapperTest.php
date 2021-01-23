@@ -153,4 +153,25 @@ class MapperTest extends ObjectivityReposTestCase {
 		$results = $this->mapper->queryMany(["entity_name" => "Test Name X"]);
 		$this->assertEquals(2, $results->count());
 	}
+
+	public function testFindBySlug() {
+        $entities = [
+			[
+				"name" => "Test Name X",
+				"slug" => "test_slug_a"
+			],
+			[
+				"name" => "Test Name B",
+				"slug" => "test_slug_b"
+			],
+			[
+				"name" => "Test Name X",
+				"slug" => "test_slug_c"
+			],
+		];
+		foreach ($entities as $entityArray) {
+			$this->mapper->save($this->generateTestEntity($entityArray));
+		}
+		$this->assertEquals(1, $this->mapper->findBySlug("test_slug_a")->getID());
+    }
 }
