@@ -3,16 +3,12 @@ namespace Fifthgate\Objectivity\Repositories\Infrastructure\Mapper;
 
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
-use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 
 use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\Interfaces\SluggableDomainEntityMapperInterface;
 use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\AbstractDomainEntityMapper;
 
 use Carbon\Carbon;
 
-/**
-* @codeCoverageIgnoreStart
-*/
 abstract class AbstractSluggableDomainEntityMapper extends AbstractDomainEntityMapper implements SluggableDomainEntityMapperInterface
 {
     public function findBySlug(string $slug, bool $includeUnpublished) : ? DomainEntityInterface

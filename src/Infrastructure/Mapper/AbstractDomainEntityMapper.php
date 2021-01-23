@@ -7,9 +7,6 @@ use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\Interfaces\DomainEn
 use Carbon\Carbon;
 use Illuminate\Database\DatabaseManager as DB;
 
-/**
- * @codeCoverageIgnore
- */
 abstract class AbstractDomainEntityMapper implements DomainEntityMapperInterface
 {
     protected $mysqlDateFormat = 'Y-m-d H:i:s';
@@ -26,16 +23,22 @@ abstract class AbstractDomainEntityMapper implements DomainEntityMapperInterface
 
     protected $db;
 
+    //@codeCoverageIgnoreStart
     public function __construct(DB $db)
     {
         $this->db = $db;
     }
+    //@codeCoverageIgnoreEnd
 
     abstract public function makeCollection() : DomainEntityCollectionInterface;
     
     abstract protected function update(DomainEntityInterface $domainEntity) : DomainEntityInterface;
 
     abstract protected function create(DomainEntityInterface $domainEntity) : DomainEntityInterface;
+    
+    public function usesSlugs() : bool {
+        return $this->usesSlugs;
+    }
     
     public function softDeletes() : bool
     {

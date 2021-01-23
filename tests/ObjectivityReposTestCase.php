@@ -3,8 +3,13 @@
 namespace Fifthgate\Objectivity\Repositories\Tests;
 
 use Orchestra\Testbench\TestCase;
+use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityMapper;
+use Illuminate\Database\DatabaseManager as DB;
 
 class ObjectivityReposTestCase extends TestCase {
+
+
+	protected $mapper;
 
   	protected function getPackageProviders($app) {
 	}
@@ -27,5 +32,7 @@ class ObjectivityReposTestCase extends TestCase {
 	 */
 	protected function setUp(): void {
 	    parent::setUp();
+	    $db = $this->app->get(DB::class);
+	    $this->mapper = new MockSluggableDomainEntityMapper($db);	
 	}
 }

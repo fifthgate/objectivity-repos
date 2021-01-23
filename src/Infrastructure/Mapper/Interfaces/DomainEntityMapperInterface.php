@@ -11,6 +11,8 @@ interface DomainEntityMapperInterface
 
     public function publishes() : bool;
 
+    public function usesSlugs() : bool;
+
     public function getIDColumnName() : string;
 
     public function getTableName() : string;
