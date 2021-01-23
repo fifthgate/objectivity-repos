@@ -32,6 +32,7 @@ class ObjectivityReposTestCase extends TestCase {
 	 */
 	protected function setUp(): void {
 	    parent::setUp();
+	    $this->loadMigrationsFrom(__DIR__ . '/tests/migrations');
 	    $db = $this->app->get(DB::class);
 	    $this->mapper = new MockSluggableDomainEntityMapper($db);	
 	}
