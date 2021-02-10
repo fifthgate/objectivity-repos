@@ -2,6 +2,9 @@
 
 namespace Fifthgate\Objectivity\Repositories\Service\Interfaces;
 
+use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
+use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
+
 interface MultipleDomainEntityManagementServiceInterface {
 
 	public function find(string $type, int $id) : ? DomainEntityInterface;
