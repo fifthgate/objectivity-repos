@@ -3,11 +3,11 @@ namespace Fifthgate\Objectivity\Repositories\Infrastructure\Mapper;
 
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
-use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\Interfaces\DomainEntityMapperInterface;
+use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\Interfaces\DomainEntityDatabaseMapperInterface;
 use Carbon\Carbon;
 use Illuminate\Database\DatabaseManager as DB;
 
-abstract class AbstractDomainEntityMapper implements DomainEntityMapperInterface
+abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperInterface
 {
     protected $mysqlDateFormat = 'Y-m-d H:i:s';
 

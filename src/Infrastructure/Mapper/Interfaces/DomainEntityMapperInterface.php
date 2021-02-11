@@ -13,10 +13,6 @@ interface DomainEntityMapperInterface
 
     public function usesSlugs() : bool;
 
-    public function getIDColumnName() : string;
-
-    public function getTableName() : string;
-
     public function queryOne(array $queryArray) : ? DomainEntityInterface;
 
     public function queryMany(array $queryArray) : ? DomainEntityCollectionInterface;
