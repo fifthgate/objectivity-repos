@@ -13,5 +13,5 @@ interface MultipleDomainEntityManagementServiceInterface {
 
     public function findMany(string $type, array $ids) : ? DomainEntityCollectionInterface;
 
-    public function findAllOfType(string $type) : ? DomainEntityCollectionInterface;
+    public function findAllOfType(string $typeMachineName) : ? DomainEntityCollectionInterface;
 }
