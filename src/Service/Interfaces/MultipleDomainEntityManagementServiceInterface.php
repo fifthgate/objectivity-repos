@@ -11,7 +11,7 @@ interface MultipleDomainEntityManagementServiceInterface {
 
     public function findDeleted(string $type, $id) : ? DomainEntityInterface;
 
-    public function findMany(string $type, $ids) : ? DomainEntityCollectionInterface;
+    public function findMany(string $type, array $ids) : ? DomainEntityCollectionInterface;
 
     public function findAllOfType(string $type) : ? DomainEntityCollectionInterface;
 }
