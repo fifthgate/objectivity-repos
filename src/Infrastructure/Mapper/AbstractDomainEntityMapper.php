@@ -125,7 +125,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
         return $results ? $this->mapMany($results) : null;
     }
 
-    public function find(int $id) : ? DomainEntityInterface
+    public function find($id) : ? DomainEntityInterface
     {
         $query = $this->db->table($this->getTableName())
             ->where($this->getIDColumnName(), '=', $id);
@@ -157,7 +157,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
         return $domainEntity->getID() && $domainEntity->isDirty() ? $this->update($domainEntity) : $this->create($domainEntity);
     }
 
-    public function findDeleted(int $id) : ? DomainEntityInterface
+    public function findDeleted($id) : ? DomainEntityInterface
     {
         $query = $this->db->table($this->getTableName())
             ->where($this->getIDColumnName(), '=', $id);

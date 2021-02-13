@@ -9,7 +9,7 @@ interface DomainEntityMapperInterface
 {
     public function makeCollection() : DomainEntityCollectionInterface;
 
-    public function find(int $id) : ? DomainEntityInterface;
+    public function find($id) : ? DomainEntityInterface;
 
     public function mapEntity(array $result) : DomainEntityInterface;
 
