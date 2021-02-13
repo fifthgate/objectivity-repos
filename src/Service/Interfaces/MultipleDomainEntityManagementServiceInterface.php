@@ -7,11 +7,11 @@ use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollecti
 
 interface MultipleDomainEntityManagementServiceInterface {
 
-	public function find(string $type, $id) : ? DomainEntityInterface;
+	public function find(string $typeMachineName, $id) : ? DomainEntityInterface;
 
-    public function findDeleted(string $type, $id) : ? DomainEntityInterface;
+    public function findDeleted(string $typeMachineName, $id) : ? DomainEntityInterface;
 
-    public function findMany(string $type, array $ids) : ? DomainEntityCollectionInterface;
+    public function findMany(string $typeMachineName, array $ids) : ? DomainEntityCollectionInterface;
 
     public function findAllOfType(string $typeMachineName) : ? DomainEntityCollectionInterface;
 }
