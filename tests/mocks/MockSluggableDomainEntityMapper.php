@@ -47,4 +47,6 @@ class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMappe
         $domainEntity->setID($id);
         return $domainEntity;
     }
+
+    
 }

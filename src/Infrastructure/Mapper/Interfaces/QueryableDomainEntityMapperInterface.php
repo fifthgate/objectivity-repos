@@ -21,7 +21,6 @@ interface QueryableDomainEntityMapperInterface extends DomainEntityMapperInterfa
     public function save(DomainEntityInterface $domainEntity) : DomainEntityInterface;
 
 
-
     public function delete(DomainEntityInterface $domainEntity);
 
     public function findDeleted(int $id) : ? DomainEntityInterface;
