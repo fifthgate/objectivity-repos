@@ -73,4 +73,8 @@ class CreateDomainEntityCommand extends GeneratorCommand
                         ? $customPath
                         : __DIR__.$stub;
     }
+
+    protected function getStub() {
+
+    }
 }
