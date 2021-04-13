@@ -6,7 +6,7 @@ use Fifthgate\Objectivity\Repositories\Tests\ObjectivityReposTestCase;
 use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityMapper;
 use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntity;
 use \DateTime;
-
+use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class MapperTest extends ObjectivityReposTestCase {
@@ -159,5 +159,30 @@ class MapperTest extends ObjectivityReposTestCase {
 			$this->mapper->save($this->generateTestEntity($entityArray));
 		}
 		$this->assertEquals(1, $this->mapper->findBySlug("test_slug_a")->getID());
+    }
+
+    public function testCreateSaveCollection() {
+    	$entities = [
+			[
+				"name" => "Test Name A",
+				"slug" => "test_slug_a"
+			],
+			[
+				"name" => "Test Name B",
+				"slug" => "test_slug_b"
+			],
+			[
+				"name" => "Test Name C",
+				"slug" => "test_slug_c"
+			],
+		];
+		
+		$entityObjects = [];
+		foreach ($entities as $entityArray) {
+			$entity = $this->mapper->save($this->generateTestEntity($entityArray));
+			$entityObjects[$entity->getID()] = $entity;
+		}
+		$collection = $this->mapper->findMany(array_keys($entityObjects));
+		$this->assertTrue($collection instanceof DomainEntityCollectionInterface);
     }
 }
