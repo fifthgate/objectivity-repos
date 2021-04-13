@@ -159,10 +159,23 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
 
     public function findDeleted($id) : ? DomainEntityInterface
     {
+        //@codeCoverageIgnoreStart
+        if (!$this->softDeletes()) {
+            return null;
+        }
+        //@codeCoverageIgnoreEnd
         $query = $this->db->table($this->getTableName())
             ->where($this->getIDColumnName(), '=', $id);
         $result = $query->first();
 
         return $result ? $this->mapEntity((array) $result) : null;
+    }
+
+    public function saveCollection(DomainEntityCollectionInterface $collection) : DomainEntityCollectionInterface {
+        $savedCollection = $this->makeCollection();
+        foreach ($collection as $item) {
+            $savedCollection->add($this->save($item));
+        }
+        return $savedCollection;
     }
 }

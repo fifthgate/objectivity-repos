@@ -18,4 +18,6 @@ interface DomainEntityMapperInterface
     public function findAll(bool $includeUnpublished = false) : ? DomainEntityCollectionInterface;
 
     public function findMany(array $ids) : ? DomainEntityCollectionInterface;
+
+    public function saveCollection(DomainEntityCollectionInterface $collection) : DomainEntityCollectionInterface;
 }

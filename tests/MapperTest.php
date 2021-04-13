@@ -8,7 +8,7 @@ use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntity;
 use \DateTime;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
+use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityCollection;
 class MapperTest extends ObjectivityReposTestCase {
 
 	use RefreshDatabase;
@@ -177,12 +177,20 @@ class MapperTest extends ObjectivityReposTestCase {
 			],
 		];
 		
-		$entityObjects = [];
+		$entityCollection = new MockSluggableDomainEntityCollection;
+		
 		foreach ($entities as $entityArray) {
-			$entity = $this->mapper->save($this->generateTestEntity($entityArray));
-			$entityObjects[$entity->getID()] = $entity;
+			$entityCollection->add($this->generateTestEntity($entityArray));
 		}
-		$collection = $this->mapper->findMany(array_keys($entityObjects));
-		$this->assertTrue($collection instanceof DomainEntityCollectionInterface);
+		$savedCollection = $this->mapper->saveCollection($entityCollection);
+		$this->assertEquals(3, $savedCollection->count());
+
+		foreach ($savedCollection as $item) {
+			$this->assertNotNull($item->getID());
+		}
+		$savedEntityB = $savedCollection->filterByFieldValue("getSlug", "test_slug_b")->first();
+		$this->assertNotNull($savedEntityB);
+		$this->assertEquals("test_slug_b", $savedEntityB->getSlug());
+		$this->assertEquals("Test Name B", $savedEntityB->getName());
     }
 }
