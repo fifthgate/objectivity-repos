@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc8894d70b59309f151c6bd9c6fd0ae1",
+    "content-hash": "280b4e200a11084f88504a08453655c9",
     "packages": [
         {
             "name": "fifthgate/objectivity-core",
-            "version": "v0.1.5",
+            "version": "v0.1.6",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fifthgate/objectivity-core.git",
-                "reference": "3ad0378b30638fa55362ce958f441b7f4f246435"
+                "reference": "42e0b104ccb080a43c67ec1a874921949118f06b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fifthgate/objectivity-core/zipball/3ad0378b30638fa55362ce958f441b7f4f246435",
-                "reference": "3ad0378b30638fa55362ce958f441b7f4f246435",
+                "url": "https://api.github.com/repos/fifthgate/objectivity-core/zipball/42e0b104ccb080a43c67ec1a874921949118f06b",
+                "reference": "42e0b104ccb080a43c67ec1a874921949118f06b",
                 "shasum": ""
             },
             "require": {
@@ -52,10 +52,10 @@
             "description": "A simple library providing domain-driven design objects for Laravel to use in other projects.",
             "homepage": "https://github.com/fifthgate/objectivity-core",
             "support": {
-                "source": "https://github.com/fifthgate/objectivity-core/tree/v0.1.5",
+                "source": "https://github.com/fifthgate/objectivity-core/tree/v0.1.6",
                 "issues": "https://github.com/fifthgate/objectivity-core/issues"
             },
-            "time": "2021-04-08T15:45:59+00:00"
+            "time": "2021-04-13T18:59:21+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1051,12 +1051,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "cf4082973abc796ec285190f0603380021f6d26f"
+                "reference": "8fa6a82ea1d3e24b8709e00d80b7bff8b02b229e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/cf4082973abc796ec285190f0603380021f6d26f",
-                "reference": "cf4082973abc796ec285190f0603380021f6d26f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/8fa6a82ea1d3e24b8709e00d80b7bff8b02b229e",
+                "reference": "8fa6a82ea1d3e24b8709e00d80b7bff8b02b229e",
                 "shasum": ""
             },
             "require": {
@@ -1212,7 +1212,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-04-13T13:49:49+00:00"
+            "time": "2021-04-13T16:55:13+00:00"
         },
         {
             "name": "league/commonmark",
@@ -5284,12 +5284,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "0905c3eef6802b805614126496d7cf03de68df2e"
+                "reference": "c998faa8d7cbda36e621dbecfa55e449feef7c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/0905c3eef6802b805614126496d7cf03de68df2e",
-                "reference": "0905c3eef6802b805614126496d7cf03de68df2e",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/c998faa8d7cbda36e621dbecfa55e449feef7c6f",
+                "reference": "c998faa8d7cbda36e621dbecfa55e449feef7c6f",
                 "shasum": ""
             },
             "require": {
@@ -5389,7 +5389,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-04-13T11:27:06+00:00"
+            "time": "2021-04-13T16:59:17+00:00"
         },
         {
             "name": "symfony/mime",
