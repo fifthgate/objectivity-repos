@@ -12,4 +12,9 @@ abstract class AbstractSluggableDomainEntityRepository extends AbstractDomainEnt
     {
         return $this->mapper->findBySlug($slug, $includeUnpublished);
     }
+
+    public function slugExists(string $slug): bool
+    {
+        return $this->mapper->slugExists($slug);
+    }
 }

@@ -28,4 +28,10 @@ abstract class AbstractSluggableDomainEntityMapper extends AbstractDomainEntityM
 
         return $result ? $this->mapEntity((array) $result) : null;
     }
+
+    public function slugExists(string $slug) : bool
+    {
+        $query = $this->db->table($this->getTableName())->where('slug', '=', $slug);
+        return $query->first() !== null;
+    }
 }
