@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "49d7278ac2d87a171ac5239ada4e0133",
+    "content-hash": "17165cf272683654fd1d65dfce5dbaba",
     "packages": [
         {
             "name": "fifthgate/objectivity-core",
-            "version": "v0.3.0.0",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fifthgate/objectivity-core.git",
-                "reference": "414d80b05bb83a087411365ec403f162f361785b"
+                "reference": "b3fd42f6dcfb23a361745c9ffefaa217046fe5bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fifthgate/objectivity-core/zipball/414d80b05bb83a087411365ec403f162f361785b",
-                "reference": "414d80b05bb83a087411365ec403f162f361785b",
+                "url": "https://api.github.com/repos/fifthgate/objectivity-core/zipball/b3fd42f6dcfb23a361745c9ffefaa217046fe5bf",
+                "reference": "b3fd42f6dcfb23a361745c9ffefaa217046fe5bf",
                 "shasum": ""
             },
             "require": {
@@ -52,10 +52,10 @@
             "description": "A simple library providing domain-driven design objects for Laravel to use in other projects.",
             "homepage": "https://github.com/fifthgate/objectivity-core",
             "support": {
-                "source": "https://github.com/fifthgate/objectivity-core/tree/v0.3.0.0",
+                "source": "https://github.com/fifthgate/objectivity-core/tree/v0.3.1",
                 "issues": "https://github.com/fifthgate/objectivity-core/issues"
             },
-            "time": "2021-09-22T15:34:38+00:00"
+            "time": "2021-09-22T15:50:10+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
