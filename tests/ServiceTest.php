@@ -91,6 +91,12 @@ class ServiceTest extends ObjectivityReposTestCase
         $this->assertEquals(2, $foundResults->count());
     }
 
+    public function testFindManyEmpty()
+    {
+        $foundResults = $this->service->findMany([]);
+        $this->assertNull($foundResults);
+    }
+
     public function testFindBySlug()
     {
         $entities = [
