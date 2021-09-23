@@ -18,8 +18,9 @@ interface QueryableDomainEntityMapperInterface extends DomainEntityMapperInterfa
 
     public function queryMany(array $queryArray) : ? DomainEntityCollectionInterface;
 
-    public function save(DomainEntityInterface $domainEntity) : DomainEntityInterface;
+    public function queryExcluding(array $includeParameters, array $excludeParameters) : ? DomainEntityCollectionInterface;
 
+    public function save(DomainEntityInterface $domainEntity) : DomainEntityInterface;
 
     public function delete(DomainEntityInterface $domainEntity);
 

@@ -201,6 +201,36 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
     }
 
     /**
+     * Find every domain entity for a simple column => value query, along with a list of parameters to exclude.
+     * @param  array  $includeParameters an array of values to include with the format $column => $value. EG [, "title" => "Something or other"]
+     * @param  array  $excludeParameters an array of values to *exclude* with the format $column => $value. EG [, "title" => "Something or other"]
+     *
+     * @return DomainEntityCollectionInterface|null A collection of fully-hydrated domain objects, or null if the query returned no results.
+     */
+    public function queryExcluding(array $includeParameters, array $excludeParameters) : ? DomainEntityCollectionInterface
+    {
+        $query = $this->db->table($this->getTableName());
+
+        if (!empty($includeParameters)) {
+            foreach ($includeParameters as $col => $value) {
+                $query = $query->where($col, '=', $value);
+            }
+        }
+        
+        if (!empty($excludeParameters)) {
+            foreach ($excludeParameters as $col => $value) {
+                $query = $query->where($col, '!=', $value);
+            }
+        }
+
+        if ($this->softDeletes()) {
+            $query = $query->whereNull('deleted_at');
+        }
+        $results = $query->get()->toArray();
+        return $results ? $this->mapMany($results) : null;
+    }
+
+    /**
      * Find a single entity from its primary key
      *
      * @param mixed $id The Primary key value.
