@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ddf6a70cb1bc624e3f1474d3e452f8d",
+    "content-hash": "e3fc32764f7a5782a3160719d57d2e64",
     "packages": [
         {
             "name": "fifthgate/objectivity-core",
-            "version": "v0.4.0",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fifthgate/objectivity-core.git",
@@ -52,7 +52,7 @@
             "description": "A simple library providing domain-driven design objects for Laravel to use in other projects.",
             "homepage": "https://github.com/fifthgate/objectivity-core",
             "support": {
-                "source": "https://github.com/fifthgate/objectivity-core/tree/v0.4.0",
+                "source": "https://github.com/fifthgate/objectivity-core/tree/v1.0.0",
                 "issues": "https://github.com/fifthgate/objectivity-core/issues"
             },
             "time": "2021-12-21T13:34:26+00:00"

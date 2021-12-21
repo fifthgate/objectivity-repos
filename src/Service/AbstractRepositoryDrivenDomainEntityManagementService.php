@@ -11,8 +11,6 @@ use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollecti
 abstract class AbstractRepositoryDrivenDomainEntityManagementService extends AbstractDomainEntityManagementService implements DomainEntityManagementServiceInterface
 {
     protected $repository;
-
-    abstract public function getEntityInfo() : array;
     
     public function __construct(DomainEntityRepositoryInterface $repository)
     {
