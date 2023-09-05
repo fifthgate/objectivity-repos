@@ -45,7 +45,6 @@ class ObjectivityReposTestCase extends TestCase {
 	        'database' => ':memory:',
 	        'prefix'   => '',
 	    ]);
-	    //$app['config']->set('smartmenu', $this->testMenuArray);
 	}
 
 	/**
