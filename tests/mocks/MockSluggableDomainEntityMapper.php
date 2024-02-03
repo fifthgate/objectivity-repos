@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+
 namespace Fifthgate\Objectivity\Repositories\Tests\Mocks;
 
 use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\AbstractSluggableDomainEntityMapper;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
-use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntity;
 use \DateTime;
-use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityCollection;
+
 
 class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMapper {
 	

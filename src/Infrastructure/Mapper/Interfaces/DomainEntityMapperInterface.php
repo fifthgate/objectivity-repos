@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\Interfaces;
 
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;

@@ -4,8 +4,6 @@ namespace Fifthgate\Objectivity\Repositories;
 
 use Illuminate\Support\ServiceProvider;
 
-use Fifthgate\Objectivity\Repositories\Console\Commands\CreateDomainEntityCommand;
-
 /**
  * @codeCoverageIgnore
  */

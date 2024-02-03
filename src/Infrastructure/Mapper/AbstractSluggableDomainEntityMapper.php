@@ -1,12 +1,11 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Fifthgate\Objectivity\Repositories\Infrastructure\Mapper;
 
-use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
-
 use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\Interfaces\SluggableDomainEntityMapperInterface;
-use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\AbstractDomainEntityMapper;
-
 use Carbon\Carbon;
 
 abstract class AbstractSluggableDomainEntityMapper extends AbstractDomainEntityMapper implements SluggableDomainEntityMapperInterface

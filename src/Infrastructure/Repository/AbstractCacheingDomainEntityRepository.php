@@ -2,6 +2,7 @@
 
 namespace Fifthgate\Objectivity\Repositories\Infrastructure\Repository;
 
+use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\Interfaces\DomainEntityDatabaseMapperInterface;
 use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\CacheingDomainEntityRepositoryInterface;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
@@ -11,8 +12,6 @@ abstract class AbstractCacheingDomainEntityRepository extends AbstractDomainEnti
 {
 
     protected const ITEM_TYPE = '';
-
-    protected $mapper;
 
     /**
      * @param integer $id
@@ -26,7 +25,7 @@ abstract class AbstractCacheingDomainEntityRepository extends AbstractDomainEnti
         return sprintf(
             "%s_COLLECTION_[%s]",
             $this::ITEM_TYPE,
-            implode($ids, ",")
+            implode(",", $ids)
         );
     }
 

@@ -1,14 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Fifthgate\Objectivity\Repositories\Infrastructure\Repository;
 
+use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\Interfaces\DomainEntityDatabaseMapperInterface;
 use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\DomainEntityRepositoryInterface;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 
 abstract class AbstractDomainEntityRepository implements DomainEntityRepositoryInterface
 {
-    protected $mapper;
+    protected DomainEntityDatabaseMapperInterface $mapper;
 
     public function save(DomainEntityInterface $domainEntity) : DomainEntityInterface
     {

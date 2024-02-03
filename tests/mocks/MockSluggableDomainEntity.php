@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Fifthgate\Objectivity\Repositories\Tests\Mocks;
 
 use Fifthgate\Objectivity\Core\Domain\AbstractSoftDeletingDomainEntity;
@@ -7,9 +9,9 @@ use Fifthgate\Objectivity\Core\Domain\Interfaces\SluggableDomainEntityInterface;
 
 class MockSluggableDomainEntity extends AbstractSoftDeletingDomainEntity implements SluggableDomainEntityInterface {
 
-	protected $slug;
+	protected string $slug;
 
-	protected $name;
+	protected string $name;
 
 	public function setSlug(string $slug) {
 		$this->slug = $slug;

@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces;
 
-use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\DomainEntityRepositoryInterface;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 
 interface CacheingSluggableDomainEntityRepositoryInterface extends SluggableDomainEntityRepositoryInterface

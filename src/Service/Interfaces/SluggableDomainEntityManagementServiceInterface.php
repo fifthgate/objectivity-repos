@@ -1,10 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Fifthgate\Objectivity\Repositories\Service\Interfaces;
 
-use Fifthgate\Objectivity\Repositories\Service\Interfaces\DomainEntityManagementServiceInterface;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
-use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 
 interface SluggableDomainEntityManagementServiceInterface extends DomainEntityManagementServiceInterface
 {

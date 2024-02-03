@@ -4,7 +4,6 @@ namespace Fifthgate\Objectivity\Repositories\Service;
 
 use Fifthgate\Objectivity\Repositories\Service\Interfaces\DomainEntityManagementServiceInterface;
 use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\DomainEntityRepositoryInterface;
-use Fifthgate\Objectivity\Repositories\Service\AbstractDomainEntityManagementService;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 

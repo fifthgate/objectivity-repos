@@ -2,7 +2,6 @@
 
 namespace Fifthgate\Objectivity\Repositories\Infrastructure\Repository;
 
-use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\AbstractDomainEntityRepository;
 use Fifthgate\Objectivity\Repositories\Infrastructure\Repository\Interfaces\SluggableDomainEntityRepositoryInterface;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 
