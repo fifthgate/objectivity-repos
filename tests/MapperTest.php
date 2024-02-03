@@ -9,7 +9,6 @@ use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntityColl
 
 class MapperTest extends ObjectivityReposTestCase
 {
-
     use RefreshDatabase;
 
     public function testMapperInstantiation()
@@ -20,15 +19,15 @@ class MapperTest extends ObjectivityReposTestCase
         $this->assertEquals('id', $this->mapper->getIDColumnName());
         $this->assertEquals('mock_entity_mapper_table', $this->mapper->getTableName());
     }
-    
+
     public function testDomainEntitySave()
     {
-        
+
         $entity = $this->generateTestEntity();
 
         $this->assertEquals("test_slug", $entity->getSlug());
         $this->assertNull($entity->getID());
-        
+
         $entity = $this->mapper->save($entity);
         $this->assertNotNull($entity->getID());
         $this->assertEquals("test_slug", $entity->getSlug());
@@ -184,9 +183,9 @@ class MapperTest extends ObjectivityReposTestCase
                 "slug" => "test_slug_c"
             ],
         ];
-        
-        $entityCollection = new MockSluggableDomainEntityCollection;
-        
+
+        $entityCollection = new MockSluggableDomainEntityCollection();
+
         foreach ($entities as $entityArray) {
             $entityCollection->add($this->generateTestEntity($entityArray));
         }

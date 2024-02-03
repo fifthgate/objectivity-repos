@@ -8,7 +8,7 @@ use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 
 abstract class AbstractCacheingSluggableDomainEntityRepository extends AbstractCacheingDomainEntityRepository implements CacheingSluggableDomainEntityRepositoryInterface
 {
-    public function findBySlug(string $slug, bool $includeUnpublished = false, bool $fresh = false) : ? DomainEntityInterface
+    public function findBySlug(string $slug, bool $includeUnpublished = false, bool $fresh = false): ?DomainEntityInterface
     {
         return $this->mapper->findBySlug($slug, $includeUnpublished);
     }

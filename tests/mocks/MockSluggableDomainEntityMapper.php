@@ -2,18 +2,16 @@
 
 declare(strict_types=1);
 
-
 namespace Fifthgate\Objectivity\Repositories\Tests\Mocks;
 
 use Fifthgate\Objectivity\Repositories\Infrastructure\Mapper\AbstractSluggableDomainEntityMapper;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
-use \DateTime;
+use DateTime;
 
-
-class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMapper {
-	
-	protected string $tableName = 'mock_entity_mapper_table';
+class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMapper
+{
+    protected string $tableName = 'mock_entity_mapper_table';
 
     protected bool $publishes = false;
 
@@ -21,12 +19,14 @@ class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMappe
 
     protected bool $usesSlugs = true;
 
-	public function makeCollection() : DomainEntityCollectionInterface {
-        return new MockSluggableDomainEntityCollection;
-	}
-    
-    public function mapEntity(array $result) : DomainEntityInterface {
-        $entity = new MockSluggableDomainEntity;
+    public function makeCollection(): DomainEntityCollectionInterface
+    {
+        return new MockSluggableDomainEntityCollection();
+    }
+
+    public function mapEntity(array $result): DomainEntityInterface
+    {
+        $entity = new MockSluggableDomainEntity();
         $entity->setID($result["id"]);
         $entity->setName($result["entity_name"]);
         $entity->setSlug($result["slug"]);
@@ -35,20 +35,22 @@ class MockSluggableDomainEntityMapper extends AbstractSluggableDomainEntityMappe
         return $entity;
     }
 
-    protected function update(DomainEntityInterface $domainEntity) : DomainEntityInterface {
+    protected function update(DomainEntityInterface $domainEntity): DomainEntityInterface
+    {
 
     }
-    protected function create(DomainEntityInterface $domainEntity) : DomainEntityInterface {
-    	 $id = $this->db->table($this->getTableName())
-            ->insertGetId([
-                'slug' => $domainEntity->getSlug(),
-                'entity_name' => $domainEntity->getName(),
-                'created_at' => $domainEntity->getCreatedAt()->format('Y-m-d H:i:s'),
-                'updated_at' => $domainEntity->getUpdatedAt()->format('Y-m-d H:i:s')
+    protected function create(DomainEntityInterface $domainEntity): DomainEntityInterface
+    {
+        $id = $this->db->table($this->getTableName())
+           ->insertGetId([
+               'slug' => $domainEntity->getSlug(),
+               'entity_name' => $domainEntity->getName(),
+               'created_at' => $domainEntity->getCreatedAt()->format('Y-m-d H:i:s'),
+               'updated_at' => $domainEntity->getUpdatedAt()->format('Y-m-d H:i:s')
         ]);
         $domainEntity->setID($id);
         return $domainEntity;
     }
 
-    
+
 }

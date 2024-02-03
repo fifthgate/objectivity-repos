@@ -10,28 +10,28 @@ use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollecti
 abstract class AbstractRepositoryDrivenDomainEntityManagementService extends AbstractDomainEntityManagementService implements DomainEntityManagementServiceInterface
 {
     protected $repository;
-    
+
     public function __construct(DomainEntityRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }
 
-    public function find(int $id) : ? DomainEntityInterface
+    public function find(int $id): ?DomainEntityInterface
     {
         return $this->repository->find($id);
     }
 
-    public function findDeleted(int $id) : ? DomainEntityInterface
+    public function findDeleted(int $id): ?DomainEntityInterface
     {
         return $this->repository->findDeleted($id);
     }
 
-    public function findMany(array $fids) : ? DomainEntityCollectionInterface
+    public function findMany(array $fids): ?DomainEntityCollectionInterface
     {
         return $this->repository->findMany($fids);
     }
 
-    public function findAll() : ? DomainEntityCollectionInterface
+    public function findAll(): ?DomainEntityCollectionInterface
     {
         return $this->repository->findAll();
     }
@@ -41,7 +41,7 @@ abstract class AbstractRepositoryDrivenDomainEntityManagementService extends Abs
         return $this->repository->delete($domainEntity);
     }
 
-    public function save(DomainEntityInterface $domainEntity) : DomainEntityInterface
+    public function save(DomainEntityInterface $domainEntity): DomainEntityInterface
     {
         return $this->repository->save($domainEntity);
     }

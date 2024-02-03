@@ -13,22 +13,22 @@ abstract class AbstractDomainEntityRepository implements DomainEntityRepositoryI
 {
     protected DomainEntityDatabaseMapperInterface $mapper;
 
-    public function save(DomainEntityInterface $domainEntity) : DomainEntityInterface
+    public function save(DomainEntityInterface $domainEntity): DomainEntityInterface
     {
         return $this->mapper->save($domainEntity);
     }
-    
-    public function find(int $id) : ? DomainEntityInterface
+
+    public function find(int $id): ?DomainEntityInterface
     {
         return $this->mapper->find($id);
     }
-    
-    public function findAll(bool $includeUnpublished = false) : ? DomainEntityCollectionInterface
+
+    public function findAll(bool $includeUnpublished = false): ?DomainEntityCollectionInterface
     {
         return $this->mapper->findAll($includeUnpublished);
     }
 
-    public function findMany(array $ids) : ? DomainEntityCollectionInterface
+    public function findMany(array $ids): ?DomainEntityCollectionInterface
     {
         return $this->mapper->findMany($ids);
     }
@@ -38,7 +38,7 @@ abstract class AbstractDomainEntityRepository implements DomainEntityRepositoryI
         return $this->mapper->delete($domainEntity);
     }
 
-    public function findDeleted(int $id) : ? DomainEntityInterface
+    public function findDeleted(int $id): ?DomainEntityInterface
     {
         return $this->mapper->findDeleted($id);
     }

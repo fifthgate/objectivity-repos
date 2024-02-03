@@ -11,53 +11,56 @@ use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockSluggableDomainEntity;
 use Fifthgate\Objectivity\Repositories\Tests\Mocks\MockRepositoryDrivenSluggableDomainEntityManagementService;
 
 use Illuminate\Database\DatabaseManager as DB;
-use \DateTime;
+use DateTime;
 
-class ObjectivityReposTestCase extends TestCase {
+class ObjectivityReposTestCase extends TestCase
+{
+    protected $mapper;
 
-	protected $mapper;
+    protected $repository;
 
-	protected $repository;
+    protected $service;
 
-	protected $service;
+    public function generateTestEntity(array $overrides = [])
+    {
+        $entity	= new MockSluggableDomainEntity();
+        if (isset($overrides["id"]) && $overrides["id"]) {
+            $entity->setID($overrides["id"]);
+        }
+        $entity->setName($overrides["name"] ?? "Test Name");
+        $entity->setSlug($overrides["slug"] ?? "test_slug");
+        $createdAt = new DateTime("2009-09-09 09:09:09");
+        $entity->setCreatedAt($overrides["created_at"] ?? $createdAt);
+        $entity->setUpdatedAt($overrides["updated_at"] ?? $createdAt);
+        return $entity;
+    }
 
-	public function generateTestEntity(array $overrides = []) {
-		$entity	= new MockSluggableDomainEntity;
-		if (isset($overrides["id"]) && $overrides["id"]) {
-			$entity->setID($overrides["id"]);
-		}
-		$entity->setName($overrides["name"] ?? "Test Name");
-		$entity->setSlug($overrides["slug"] ?? "test_slug");
-		$createdAt = new DateTime("2009-09-09 09:09:09");
-		$entity->setCreatedAt($overrides["created_at"] ?? $createdAt);
-		$entity->setUpdatedAt($overrides["updated_at"] ?? $createdAt);
-		return $entity;
-	}
+    protected function getPackageProviders($app)
+    {
+    }
 
-  	protected function getPackageProviders($app) {
-	}
+    protected function getEnvironmentSetUp($app)
+    {
+        $app['config']->set('key', 'base64:j84cxCjod/fon4Ks52qdMKiJXOrO5OSDBpXjVUMz61s=');
+        // Setup default database to use sqlite :memory:
+        $app['config']->set('database.default', 'testbench');
+        $app['config']->set('database.connections.testbench', [
+            'driver'   => 'sqlite',
+            'database' => ':memory:',
+            'prefix'   => '',
+        ]);
+    }
 
-	protected function getEnvironmentSetUp($app)
-	{
-		$app['config']->set('key', 'base64:j84cxCjod/fon4Ks52qdMKiJXOrO5OSDBpXjVUMz61s=');
-	    // Setup default database to use sqlite :memory:
-	    $app['config']->set('database.default', 'testbench');
-	    $app['config']->set('database.connections.testbench', [
-	        'driver'   => 'sqlite',
-	        'database' => ':memory:',
-	        'prefix'   => '',
-	    ]);
-	}
-
-	/**
-	 * Setup the test environment.
-	 */
-	protected function setUp(): void {
-	    parent::setUp();
-	    $this->loadMigrationsFrom(__DIR__ . '/migrations');
-	    $db = $this->app->get(DB::class);
-	    $this->mapper = new MockSluggableDomainEntityMapper($db);	
-	    $this->repository = new MockSluggableDomainEntityRepository($this->mapper);
-	    $this->service = new MockRepositoryDrivenSluggableDomainEntityManagementService($this->repository);
-	}
+    /**
+     * Setup the test environment.
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->loadMigrationsFrom(__DIR__ . '/migrations');
+        $db = $this->app->get(DB::class);
+        $this->mapper = new MockSluggableDomainEntityMapper($db);
+        $this->repository = new MockSluggableDomainEntityRepository($this->mapper);
+        $this->service = new MockRepositoryDrivenSluggableDomainEntityManagementService($this->repository);
+    }
 }

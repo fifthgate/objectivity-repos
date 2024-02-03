@@ -10,12 +10,12 @@ class ServiceTest extends ObjectivityReposTestCase
 
     public function testDomainEntitySave()
     {
-        
+
         $entity = $this->generateTestEntity();
         $this->assertFalse($this->service->slugExists('test_slug'));
         $this->assertEquals("test_slug", $entity->getSlug());
         $this->assertNull($entity->getID());
-        
+
         $entity = $this->service->save($entity);
         $this->assertNotNull($entity->getID());
         $this->assertEquals("test_slug", $entity->getSlug());

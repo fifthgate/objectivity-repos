@@ -7,13 +7,13 @@ namespace Fifthgate\Objectivity\Repositories\Service\Interfaces;
 use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollectionInterface;
 
-interface MultipleDomainEntityManagementServiceInterface {
+interface MultipleDomainEntityManagementServiceInterface
+{
+    public function find(string $typeMachineName, $id): ?DomainEntityInterface;
 
-	public function find(string $typeMachineName, $id) : ? DomainEntityInterface;
+    public function findDeleted(string $typeMachineName, $id): ?DomainEntityInterface;
 
-    public function findDeleted(string $typeMachineName, $id) : ? DomainEntityInterface;
+    public function findMany(string $typeMachineName, array $ids): ?DomainEntityCollectionInterface;
 
-    public function findMany(string $typeMachineName, array $ids) : ? DomainEntityCollectionInterface;
-
-    public function findAllOfType(string $typeMachineName) : ? DomainEntityCollectionInterface;
+    public function findAllOfType(string $typeMachineName): ?DomainEntityCollectionInterface;
 }

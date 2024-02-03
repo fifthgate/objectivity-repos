@@ -7,8 +7,9 @@ use Illuminate\Support\ServiceProvider;
 /**
  * @codeCoverageIgnore
  */
-class ObjectivityRepositoriesServiceProvider extends ServiceProvider {
- 	/**
+class ObjectivityRepositoriesServiceProvider extends ServiceProvider
+{
+    /**
     * Publishes configuration file.
     *
     * @return  void

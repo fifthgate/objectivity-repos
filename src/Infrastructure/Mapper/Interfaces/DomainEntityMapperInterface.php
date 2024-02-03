@@ -9,17 +9,17 @@ use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollecti
 
 interface DomainEntityMapperInterface
 {
-    public function makeCollection() : DomainEntityCollectionInterface;
+    public function makeCollection(): DomainEntityCollectionInterface;
 
-    public function find($id) : ? DomainEntityInterface;
+    public function find($id): ?DomainEntityInterface;
 
-    public function mapEntity(array $result) : DomainEntityInterface;
+    public function mapEntity(array $result): DomainEntityInterface;
 
-    public function mapMany(array $results) : ? DomainEntityCollectionInterface;
+    public function mapMany(array $results): ?DomainEntityCollectionInterface;
 
-    public function findAll(bool $includeUnpublished = false) : ? DomainEntityCollectionInterface;
+    public function findAll(bool $includeUnpublished = false): ?DomainEntityCollectionInterface;
 
-    public function findMany(array $ids) : ? DomainEntityCollectionInterface;
+    public function findMany(array $ids): ?DomainEntityCollectionInterface;
 
-    public function saveCollection(DomainEntityCollectionInterface $collection) : DomainEntityCollectionInterface;
+    public function saveCollection(DomainEntityCollectionInterface $collection): DomainEntityCollectionInterface;
 }

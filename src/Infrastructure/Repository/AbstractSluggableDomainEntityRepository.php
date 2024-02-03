@@ -7,7 +7,7 @@ use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 
 abstract class AbstractSluggableDomainEntityRepository extends AbstractDomainEntityRepository implements SluggableDomainEntityRepositoryInterface
 {
-    public function findBySlug(string $slug, bool $includeUnpublished = false) : ? DomainEntityInterface
+    public function findBySlug(string $slug, bool $includeUnpublished = false): ?DomainEntityInterface
     {
         return $this->mapper->findBySlug($slug, $includeUnpublished);
     }

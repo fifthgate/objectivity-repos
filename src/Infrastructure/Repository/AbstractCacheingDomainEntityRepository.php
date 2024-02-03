@@ -10,18 +10,19 @@ use Illuminate\Support\Facades\Cache;
 
 abstract class AbstractCacheingDomainEntityRepository extends AbstractDomainEntityRepository implements CacheingDomainEntityRepositoryInterface
 {
-
     protected const ITEM_TYPE = '';
 
     /**
      * @param integer $id
      * @return string
      */
-    final protected function getIndividualCacheKey(int $id): string {
+    final protected function getIndividualCacheKey(int $id): string
+    {
         return sprintf("%s_%s", $this::ITEM_TYPE, $id);
     }
 
-    final protected function getCollectionCacheKey(array $ids): string {
+    final protected function getCollectionCacheKey(array $ids): string
+    {
         return sprintf(
             "%s_COLLECTION_[%s]",
             $this::ITEM_TYPE,
@@ -34,7 +35,7 @@ abstract class AbstractCacheingDomainEntityRepository extends AbstractDomainEnti
      * @param boolean $fresh
      * @return DomainEntityInterface|null
      */
-    public function find(int $id, bool $fresh = false) : ? DomainEntityInterface
+    public function find(int $id, bool $fresh = false): ?DomainEntityInterface
     {
         $entity = Cache::get($this->getIndividualCacheKey($id));
         if (!$entity or $fresh = true) {
@@ -46,13 +47,13 @@ abstract class AbstractCacheingDomainEntityRepository extends AbstractDomainEnti
         }
         return null;
     }
-    
-    public function findAll(bool $includeUnpublished = false, bool $fresh = false) : ? DomainEntityCollectionInterface
+
+    public function findAll(bool $includeUnpublished = false, bool $fresh = false): ?DomainEntityCollectionInterface
     {
         return $this->mapper->findAll($includeUnpublished);
     }
 
-    public function findMany(array $ids, bool $fresh = false) : ? DomainEntityCollectionInterface
+    public function findMany(array $ids, bool $fresh = false): ?DomainEntityCollectionInterface
     {
         if (!$fresh) {
             $collection = Cache::get($this->getCollectionCacheKey($ids));
@@ -60,14 +61,14 @@ abstract class AbstractCacheingDomainEntityRepository extends AbstractDomainEnti
                 return $collection;
             }
         }
-        
-        
+
+
         $collection = $this->mapper->findMany($ids);
         if ($collection) {
             Cache::set($this->getCollectionCacheKey($ids), $collection);
         }
         return $collection;
-        
+
     }
 
 }

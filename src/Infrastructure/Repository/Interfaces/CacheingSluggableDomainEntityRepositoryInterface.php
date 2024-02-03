@@ -8,5 +8,5 @@ use Fifthgate\Objectivity\Core\Domain\Interfaces\DomainEntityInterface;
 
 interface CacheingSluggableDomainEntityRepositoryInterface extends SluggableDomainEntityRepositoryInterface
 {
-    public function findBySlug(string $slug, bool $includeUnpublished = false, bool $fresh = false) : ? DomainEntityInterface; 
+    public function findBySlug(string $slug, bool $includeUnpublished = false, bool $fresh = false): ?DomainEntityInterface;
 }

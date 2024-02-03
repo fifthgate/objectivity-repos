@@ -44,31 +44,31 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
     //@codeCoverageIgnoreEnd
 
     //Make a DomainEntityCollectionInterface Compatible collection in which the mapper can store result sets.
-    abstract public function makeCollection() : DomainEntityCollectionInterface;
-    
+    abstract public function makeCollection(): DomainEntityCollectionInterface;
+
     //Update an entity's record from a fully-hydrated object
-    abstract protected function update(DomainEntityInterface $domainEntity) : DomainEntityInterface;
+    abstract protected function update(DomainEntityInterface $domainEntity): DomainEntityInterface;
 
     //Create a new record from a fully hydrated domain object.
-    abstract protected function create(DomainEntityInterface $domainEntity) : DomainEntityInterface;
-    
+    abstract protected function create(DomainEntityInterface $domainEntity): DomainEntityInterface;
+
 
     /**
      * Does this mapper use slugs?
      *
      * @return bool
      */
-    public function usesSlugs() : bool
+    public function usesSlugs(): bool
     {
         return $this->usesSlugs;
     }
-    
+
     /**
      * Does this mapper softdelete?
      *
      * @return bool
      */
-    public function softDeletes() : bool
+    public function softDeletes(): bool
     {
         return $this->softDeletes;
     }
@@ -78,7 +78,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return bool
      */
-    public function publishes() : bool
+    public function publishes(): bool
     {
         return $this->publishes;
     }
@@ -88,7 +88,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return string The column name of the primary key.
      */
-    public function getIDColumnName() : string
+    public function getIDColumnName(): string
     {
         return $this->idColumnName;
     }
@@ -98,7 +98,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return string the Table's name, as the DB knows it.
      */
-    public function getTableName() : string
+    public function getTableName(): string
     {
         return $this->tableName;
     }
@@ -110,7 +110,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return DomainEntitycollectionInterface|null, a hydrated collection of Domain entites, or null if none found.
      */
-    public function findAll(bool $includeUnpublished = false) : ? DomainEntityCollectionInterface
+    public function findAll(bool $includeUnpublished = false): ?DomainEntityCollectionInterface
     {
         $query = $this->db->table($this->getTableName());
         if ($this->softDeletes()) {
@@ -118,7 +118,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
         }
         //@codeCoverageIgnoreStart
         if (!$includeUnpublished && $this->publishes()) {
-            $now = new Carbon;
+            $now = new Carbon();
             $query = $query->whereDate('publication_date', '<=', $now->format('Y-m-d H:i:s'));
         }
         //@codeCoverageIgnoreEnd
@@ -134,14 +134,14 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return DomainEntitycollectionInterface|null A collection of hydrated domain objects or null, if not found.
      */
-    public function findMany(array $ids) : ? DomainEntityCollectionInterface
+    public function findMany(array $ids): ?DomainEntityCollectionInterface
     {
         $query = $this->db->table($this->getTableName())->whereIn($this->getIDColumnName(), $ids);
 
         if ($this->softDeletes()) {
             $query = $query->whereNull('deleted_at');
         }
-            
+
         $results = $query ->get()->toArray();
         return $results ? $this->mapMany($results) : null;
     }
@@ -153,7 +153,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return DomainEntityCollectionInterface A collection of fully-hydrated objects.
      */
-    public function mapMany(array $results) : DomainEntityCollectionInterface
+    public function mapMany(array $results): DomainEntityCollectionInterface
     {
         $collection = $this->makeCollection();
         foreach ($results as $result) {
@@ -169,7 +169,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return DomainEntityInterface|null A fully-hydrated domain object, or null if the query returned no results.
      */
-    public function queryOne(array $queryArray) : ? DomainEntityInterface
+    public function queryOne(array $queryArray): ?DomainEntityInterface
     {
         $query = $this->db->table($this->getTableName());
         foreach ($queryArray as $col => $value) {
@@ -190,7 +190,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return DomainEntityCollectionInterface|null A collection of fully-hydrated domain objects, or null if the query returned no results.
      */
-    public function queryMany(array $queryArray) : ? DomainEntityCollectionInterface
+    public function queryMany(array $queryArray): ?DomainEntityCollectionInterface
     {
         $query = $this->db->table($this->getTableName());
         foreach ($queryArray as $col => $value) {
@@ -210,7 +210,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return DomainEntityCollectionInterface|null A collection of fully-hydrated domain objects, or null if the query returned no results.
      */
-    public function queryExcluding(array $includeParameters, array $excludeParameters) : ? DomainEntityCollectionInterface
+    public function queryExcluding(array $includeParameters, array $excludeParameters): ?DomainEntityCollectionInterface
     {
         $query = $this->db->table($this->getTableName());
 
@@ -219,7 +219,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
                 $query = $query->where($col, '=', $value);
             }
         }
-        
+
         if (!empty($excludeParameters)) {
             foreach ($excludeParameters as $col => $value) {
                 $query = $query->where($col, '!=', $value);
@@ -240,7 +240,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return DomainEntityInterface|null A fully-hydrated DomainEntityINterface or null if not found.
      */
-    public function find($id) : ? DomainEntityInterface
+    public function find($id): ?DomainEntityInterface
     {
         $query = $this->db->table($this->getTableName())
             ->where($this->getIDColumnName(), '=', $id);
@@ -249,7 +249,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
             $query = $query->whereNull('deleted_at');
         }
         $result = $query->first();
-        
+
         return $result ? $this->mapEntity((array) $result) : null;
     }
 
@@ -265,7 +265,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
         $query = $this->db->table($this->getTableName())
             ->where($this->getIDColumnName(), '=', $domainEntity->getID());
         if ($this->softDeletes()) {
-            $deletedAt = new Carbon;
+            $deletedAt = new Carbon();
             $query = $query->update(['deleted_at' => $deletedAt->format($this->mysqlDateFormat)]);
         } else {
             //@codeCoverageIgnoreStart
@@ -281,7 +281,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return DomainEntityInterface The saved domain entity, populated with any extra properties its save produced, such as an ID, a creation date or an updated date.
      */
-    public function save(DomainEntityInterface $domainEntity) : DomainEntityInterface
+    public function save(DomainEntityInterface $domainEntity): DomainEntityInterface
     {
         if ($domainEntity->getID()) {
             return $domainEntity->isDirty() ? $this->update($domainEntity) : $domainEntity;
@@ -297,7 +297,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return DomainEntityInterface|null A fully-hydrated domain entity, or null if not found. If this mapper doesn't use softdeletion, the result will ALWAYS be null.
      */
-    public function findDeleted($id) : ? DomainEntityInterface
+    public function findDeleted($id): ?DomainEntityInterface
     {
         //@codeCoverageIgnoreStart
         if (!$this->softDeletes()) {
@@ -318,7 +318,7 @@ abstract class AbstractDomainEntityMapper implements DomainEntityDatabaseMapperI
      *
      * @return DomainEntityCollectionInterface The saved collection, the constituents of which will have been updated with any metadata altered by the act of saving them, such as IDs and update dates.
      */
-    public function saveCollection(DomainEntityCollectionInterface $collection) : DomainEntityCollectionInterface
+    public function saveCollection(DomainEntityCollectionInterface $collection): DomainEntityCollectionInterface
     {
         $savedCollection = $this->makeCollection();
         foreach ($collection as $item) {

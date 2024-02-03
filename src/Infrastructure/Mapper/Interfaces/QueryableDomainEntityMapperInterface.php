@@ -9,21 +9,21 @@ use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollecti
 
 interface QueryableDomainEntityMapperInterface extends DomainEntityMapperInterface
 {
-    public function softDeletes() : bool;
+    public function softDeletes(): bool;
 
-    public function publishes() : bool;
+    public function publishes(): bool;
 
-    public function usesSlugs() : bool;
+    public function usesSlugs(): bool;
 
-    public function queryOne(array $queryArray) : ? DomainEntityInterface;
+    public function queryOne(array $queryArray): ?DomainEntityInterface;
 
-    public function queryMany(array $queryArray) : ? DomainEntityCollectionInterface;
+    public function queryMany(array $queryArray): ?DomainEntityCollectionInterface;
 
-    public function queryExcluding(array $includeParameters, array $excludeParameters) : ? DomainEntityCollectionInterface;
+    public function queryExcluding(array $includeParameters, array $excludeParameters): ?DomainEntityCollectionInterface;
 
-    public function save(DomainEntityInterface $domainEntity) : DomainEntityInterface;
+    public function save(DomainEntityInterface $domainEntity): DomainEntityInterface;
 
     public function delete(DomainEntityInterface $domainEntity);
 
-    public function findDeleted($id) : ? DomainEntityInterface;
+    public function findDeleted($id): ?DomainEntityInterface;
 }

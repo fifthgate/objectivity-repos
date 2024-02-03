@@ -9,9 +9,9 @@ use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollecti
 
 interface CacheingDomainEntityRepositoryInterface extends DomainEntityRepositoryInterface
 {
-    public function find(int $id, bool $fresh = false) : ? DomainEntityInterface;
-    
-    public function findAll(bool $includeUnpublished = false, bool $fresh = false) : ? DomainEntityCollectionInterface;
+    public function find(int $id, bool $fresh = false): ?DomainEntityInterface;
 
-    public function findMany(array $ids, bool $fresh = false) : ? DomainEntityCollectionInterface;
+    public function findAll(bool $includeUnpublished = false, bool $fresh = false): ?DomainEntityCollectionInterface;
+
+    public function findMany(array $ids, bool $fresh = false): ?DomainEntityCollectionInterface;
 }

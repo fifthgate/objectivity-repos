@@ -9,15 +9,15 @@ use Fifthgate\Objectivity\Core\Domain\Collection\Interfaces\DomainEntityCollecti
 
 interface DomainEntityRepositoryInterface
 {
-    public function save(DomainEntityInterface $domainEntity) : DomainEntityInterface;
-    
-    public function find(int $id) : ? DomainEntityInterface;
-    
-    public function findAll(bool $includeUnpublished = false) : ? DomainEntityCollectionInterface;
+    public function save(DomainEntityInterface $domainEntity): DomainEntityInterface;
 
-    public function findMany(array $ids) : ? DomainEntityCollectionInterface;
+    public function find(int $id): ?DomainEntityInterface;
+
+    public function findAll(bool $includeUnpublished = false): ?DomainEntityCollectionInterface;
+
+    public function findMany(array $ids): ?DomainEntityCollectionInterface;
 
     public function delete(DomainEntityInterface $domainEntity);
 
-    public function findDeleted(int $id) : ? DomainEntityInterface;
+    public function findDeleted(int $id): ?DomainEntityInterface;
 }
