@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51a143d50a17ed7e808624db8588d6ec",
+    "content-hash": "956bd6e976fda74b5fe52c17010bcfc6",
     "packages": [
         {
             "name": "fifthgate/objectivity-core",
-            "version": "v2.1.1",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fifthgate/objectivity-core.git",
-                "reference": "1ea1bcf71b1e2b78a08968b95235f5e37a16a860"
+                "reference": "bb976ec37a242135e62413e809853900e6da204c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fifthgate/objectivity-core/zipball/1ea1bcf71b1e2b78a08968b95235f5e37a16a860",
-                "reference": "1ea1bcf71b1e2b78a08968b95235f5e37a16a860",
+                "url": "https://api.github.com/repos/fifthgate/objectivity-core/zipball/bb976ec37a242135e62413e809853900e6da204c",
+                "reference": "bb976ec37a242135e62413e809853900e6da204c",
                 "shasum": ""
             },
             "require": {
@@ -53,10 +53,10 @@
             "description": "A simple library providing domain-driven design objects for Laravel to use in other projects.",
             "homepage": "https://github.com/fifthgate/objectivity-core",
             "support": {
-                "source": "https://github.com/fifthgate/objectivity-core/tree/v2.1.1",
+                "source": "https://github.com/fifthgate/objectivity-core/tree/v2.1.2",
                 "issues": "https://github.com/fifthgate/objectivity-core/issues"
             },
-            "time": "2024-02-04T10:58:19+00:00"
+            "time": "2024-02-04T12:06:12+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2303,12 +2303,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "131782c28f5829ae8eed2f2a7d465a8f93f9d219"
+                "reference": "c1faa2f6776a70c60adfaa0a8679c367f5d66ee4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/131782c28f5829ae8eed2f2a7d465a8f93f9d219",
-                "reference": "131782c28f5829ae8eed2f2a7d465a8f93f9d219",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c1faa2f6776a70c60adfaa0a8679c367f5d66ee4",
+                "reference": "c1faa2f6776a70c60adfaa0a8679c367f5d66ee4",
                 "shasum": ""
             },
             "require": {
@@ -2386,7 +2386,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-02-04T11:13:38+00:00"
+            "time": "2024-02-04T11:49:13+00:00"
         },
         {
             "name": "league/flysystem-local",
