@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28661548242bc1d47c181068d12f35ea",
+    "content-hash": "51a143d50a17ed7e808624db8588d6ec",
     "packages": [
         {
             "name": "fifthgate/objectivity-core",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fifthgate/objectivity-core.git",
-                "reference": "98ed9981c3638a17df36a3f08debee6c163c6802"
+                "reference": "1ea1bcf71b1e2b78a08968b95235f5e37a16a860"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fifthgate/objectivity-core/zipball/98ed9981c3638a17df36a3f08debee6c163c6802",
-                "reference": "98ed9981c3638a17df36a3f08debee6c163c6802",
+                "url": "https://api.github.com/repos/fifthgate/objectivity-core/zipball/1ea1bcf71b1e2b78a08968b95235f5e37a16a860",
+                "reference": "1ea1bcf71b1e2b78a08968b95235f5e37a16a860",
                 "shasum": ""
             },
             "require": {
@@ -53,10 +53,10 @@
             "description": "A simple library providing domain-driven design objects for Laravel to use in other projects.",
             "homepage": "https://github.com/fifthgate/objectivity-core",
             "support": {
-                "source": "https://github.com/fifthgate/objectivity-core/tree/v2.1.0",
+                "source": "https://github.com/fifthgate/objectivity-core/tree/v2.1.1",
                 "issues": "https://github.com/fifthgate/objectivity-core/issues"
             },
-            "time": "2024-02-03T10:52:48+00:00"
+            "time": "2024-02-04T10:58:19+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2303,12 +2303,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "369ad841ecdf1c845929f4aafd55f0944a79f1af"
+                "reference": "131782c28f5829ae8eed2f2a7d465a8f93f9d219"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/369ad841ecdf1c845929f4aafd55f0944a79f1af",
-                "reference": "369ad841ecdf1c845929f4aafd55f0944a79f1af",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/131782c28f5829ae8eed2f2a7d465a8f93f9d219",
+                "reference": "131782c28f5829ae8eed2f2a7d465a8f93f9d219",
                 "shasum": ""
             },
             "require": {
@@ -2339,7 +2339,7 @@
                 "phpseclib/phpseclib": "^3.0.34",
                 "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^9.5.11|^10.0",
-                "sabre/dav": "^4.3.1"
+                "sabre/dav": "^4.6.0"
             },
             "default-branch": true,
             "type": "library",
@@ -2386,7 +2386,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-01-26T18:43:21+00:00"
+            "time": "2024-02-04T11:13:38+00:00"
         },
         {
             "name": "league/flysystem-local",
@@ -2993,12 +2993,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "81e3e6d3313f1ddb4dfbaee7fba4b230162f004d"
+                "reference": "b8ec3bca2cd8d63e857f8c995fd097c776e0a1a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/81e3e6d3313f1ddb4dfbaee7fba4b230162f004d",
-                "reference": "81e3e6d3313f1ddb4dfbaee7fba4b230162f004d",
+                "url": "https://api.github.com/repos/nette/utils/zipball/b8ec3bca2cd8d63e857f8c995fd097c776e0a1a5",
+                "reference": "b8ec3bca2cd8d63e857f8c995fd097c776e0a1a5",
                 "shasum": ""
             },
             "require": {
@@ -3072,7 +3072,7 @@
                 "issues": "https://github.com/nette/utils/issues",
                 "source": "https://github.com/nette/utils/tree/master"
             },
-            "time": "2024-01-17T16:50:36+00:00"
+            "time": "2024-02-03T18:07:33+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3842,12 +3842,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "29a68b7091c0b86007c66e3f00b5e53a5dba1597"
+                "reference": "fae4a14ade0bf9652b056de8403a48240e36c8ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/29a68b7091c0b86007c66e3f00b5e53a5dba1597",
-                "reference": "29a68b7091c0b86007c66e3f00b5e53a5dba1597",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/fae4a14ade0bf9652b056de8403a48240e36c8ff",
+                "reference": "fae4a14ade0bf9652b056de8403a48240e36c8ff",
                 "shasum": ""
             },
             "require": {
@@ -3897,7 +3897,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-01T19:03:17+00:00"
+            "time": "2024-02-03T14:33:55+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -6199,12 +6199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "86386d4e080ba18bce8a2af2b2f602228c09b884"
+                "reference": "ec17108fbc3daeb89c198831a7c386128a3c47d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/86386d4e080ba18bce8a2af2b2f602228c09b884",
-                "reference": "86386d4e080ba18bce8a2af2b2f602228c09b884",
+                "url": "https://api.github.com/repos/symfony/console/zipball/ec17108fbc3daeb89c198831a7c386128a3c47d5",
+                "reference": "ec17108fbc3daeb89c198831a7c386128a3c47d5",
                 "shasum": ""
             },
             "require": {
@@ -6285,7 +6285,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-01T13:16:41+00:00"
+            "time": "2024-02-03T14:09:41+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -6911,12 +6911,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "2ff642e61d8863f7a822b5c052eb97e54e8b3ab4"
+                "reference": "791c5d31a8204cf3db0c66faab70282307f4376b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/2ff642e61d8863f7a822b5c052eb97e54e8b3ab4",
-                "reference": "2ff642e61d8863f7a822b5c052eb97e54e8b3ab4",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/791c5d31a8204cf3db0c66faab70282307f4376b",
+                "reference": "791c5d31a8204cf3db0c66faab70282307f4376b",
                 "shasum": ""
             },
             "require": {
@@ -6983,7 +6983,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-02T18:58:55+00:00"
+            "time": "2024-02-03T21:33:47+00:00"
         },
         {
             "name": "symfony/mime",
@@ -8165,12 +8165,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "45519bd3399e65bb1f24c9417df98b5d640d0df9"
+                "reference": "3d0a98879bbc7585aff5f9a5a539074328cc2ca0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/45519bd3399e65bb1f24c9417df98b5d640d0df9",
-                "reference": "45519bd3399e65bb1f24c9417df98b5d640d0df9",
+                "url": "https://api.github.com/repos/symfony/string/zipball/3d0a98879bbc7585aff5f9a5a539074328cc2ca0",
+                "reference": "3d0a98879bbc7585aff5f9a5a539074328cc2ca0",
                 "shasum": ""
             },
             "require": {
@@ -8184,6 +8184,7 @@
                 "symfony/translation-contracts": "<2.5"
             },
             "require-dev": {
+                "symfony/emoji": "^7.1",
                 "symfony/error-handler": "^6.4|^7.0",
                 "symfony/http-client": "^6.4|^7.0",
                 "symfony/intl": "^6.4|^7.0",
@@ -8243,7 +8244,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-01T13:18:05+00:00"
+            "time": "2024-02-03T19:41:36+00:00"
         },
         {
             "name": "symfony/translation",
@@ -8499,12 +8500,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "0435a08f69125535336177c29d56af3abc1f69da"
+                "reference": "fc651853207541c1dd88d73578c2bc1e31c7be4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/0435a08f69125535336177c29d56af3abc1f69da",
-                "reference": "0435a08f69125535336177c29d56af3abc1f69da",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/fc651853207541c1dd88d73578c2bc1e31c7be4a",
+                "reference": "fc651853207541c1dd88d73578c2bc1e31c7be4a",
                 "shasum": ""
             },
             "require": {
@@ -8576,7 +8577,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-23T14:53:30+00:00"
+            "time": "2024-02-03T18:55:56+00:00"
         },
         {
             "name": "symfony/yaml",
