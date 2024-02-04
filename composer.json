@@ -11,7 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "fifthgate/objectivity-core": "~2.1.1",
+        "fifthgate/objectivity-core": "~2.1.2",
         "guzzlehttp/guzzle": "^7.2"
     },
     "require-dev": {
